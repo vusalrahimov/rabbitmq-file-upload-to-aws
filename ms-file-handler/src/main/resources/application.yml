@@ -1,0 +1,38 @@
+aws:
+  key-id: AKIA34TNETZTT4JOO2GD
+  secret-key: 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
+  bucket-name: desofme-file-bucket
+  region: eu-central-1
+  folder: files
+
+amqp:
+  queue: file-queue
+  exchange: file-exchange
+  routing-key: file-handler
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 50000
+          max-interval: 50000
+          max-attempts: 10000000
+        concurrency: 3
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/file_db
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8081
