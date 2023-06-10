@@ -1,6 +1,6 @@
 aws:
-  key-id: AKIA34TNETZTT4JOO2GD
-  secret-key: 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
+  key-id: ******************
+  secret-key: **************************
   bucket-name: desofme-file-bucket
   region: eu-central-1
   folder: files
